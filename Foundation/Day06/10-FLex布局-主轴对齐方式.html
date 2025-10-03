@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            /* justify-content: flex-end; */
+
+            /* 居中0ions21=on wz */
+            /* justify-content: center; */
+
+            /* 父级剩余的尺寸分配成间距 */
+            /* 弹性盒子间距相等 */
+            /* justify-content: space-between; */
+
+            /* 间距出现在弹性盒子两侧 */
+            /* 视觉效果 弹性盒子之间的间距是两端间距的2倍 */
+            /* justify-content: space-around; */
+
+            /* 格间距相等 */
+            justify-content: space-evenly;
+            height: 200px;
+            border: 1px solid #000;
+        }
+
+        .box div {
+            width: 200px;
+            height: 200px;
+            background-color: palegoldenrod;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>
