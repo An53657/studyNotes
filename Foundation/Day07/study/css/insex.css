@@ -1,0 +1,103 @@
+/* 版心湖中 */
+.wrapper {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+/* 主体背景颜色 */
+body {
+    background-color: #f3f5f7;
+}
+
+/* 头部区域 */
+.header {
+    height: 100px;
+    background-color: #fff;
+}
+
+.header .wrapper {
+    display: flex;
+    padding: 29px;
+} 
+
+.logo a {
+    display: block;
+    width: 195px;
+    height: 41px;
+    background-image: url(../images/logo.png);
+    /* 隐藏字体 */
+    font-size: 0;
+}
+
+/* 导航 */
+ .nav {
+    margin-left: 102px;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav li {
+    margin-right: 24px;
+}
+
+.nav li a {
+    display: block;
+    padding: 6px 8px;
+    line-height: 24px;
+    font-size: 19px;
+}
+
+.nav li .active ,
+.nav li a:hover {
+    border-bottom: 2px solid  #00a4ff ;
+}
+
+.search {
+    margin-left: 40px;
+    padding-left: 19px;
+    padding-right: 20px;
+    width: 412px;
+    height: 40px;
+    background-color: #f3f5f7;
+    border-radius: 20px;
+}
+
+.search input {
+    flex: 1;
+    border: 0;
+    background-color: transparent;
+    /* 去除表单焦点框 */
+    outline: none;
+}
+
+/* ::placeholder 选中就是placeholder 属性文字样式 */
+.search input ::placeholder {
+    font-size: 14px;
+    color: #999;
+} 
+
+/* 父级是flex布局 子级变弹性盒子 加宽高生效 */
+.search a {
+    align-self: center;
+    width: 14px;
+    height: 16px;
+    background-image: url(../images/search.png) ;
+}
+
+.user {
+    margin-left: 32px;
+    margin-top: 4px;
+}
+
+.user img{
+    margin-right: 7px;
+    /* 行们块和蛤蟆行内对齐 */
+    vertical-align: middle;
+}
+
+.user span{
+    font-size: 16px;
+    color: #666;
+}
