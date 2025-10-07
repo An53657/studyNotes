@@ -88,3 +88,9 @@
 ### 4. 右侧课程表(right)
 18. 实现方法
     - 标签结构：,right > h3 + .conten
+
+## 4. 精品推荐(recommend)
+19. 精品推荐
+    - 实现方法
+      - 标签结构.recomment > h3+ul+a.moddify
+      - 布局思路：flex布局
