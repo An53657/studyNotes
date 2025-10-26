@@ -30,3 +30,62 @@
     
      - javascript组成是什么
        - ECMAScript(基础语法)，webAPIs(DOM,BOM)
+
+5. js书写位置
+   - 内部js
+        在直接写在html文件里，用script标签包住
+        规范：script标签写在</body>上面
+        拓展：alert('内容')页面弹出警告对话框
+
+         - 注意事项
+           如果将<script>放在html文件的底部附近的原因是浏览器会按照代码中的顺序加载html
+           如果先加载的js期望修改其下方的html，那么他可能由于html还没加载尔失效
+           因此，将js代码放在html页面底部附近通常是最好的 
+
+           ```javascript
+            <script>
+                alert('内容')
+            </script>
+            </body>
+           ```
+
+   - 外部js
+        代码放在以js为结尾的文件里
+        语法：通过script标签引到html页面中
+           
+           - 注意事项
+             script标签中间无需写代码，否则会被忽略
+             外部介绍会使代码更加有序，易于复用，且没有脚本的混合，html也更加易
+             读，这是个好习惯
+
+             ```javascript
+               <body>
+                <!-- 通过scr引入外部的js文件 -->
+                <script>scr="my.js"</script>
+               </body>     
+            ```
+
+    - 内联系js 
+        代码写在标签内部
+             语法：
+             注意：了解即可，vue框架会用到这种
+
+        ```javascript
+        <body>
+        <button> onclick="alert"("内容")>内容</button>
+        </body>
+        ```
+
+6. 总结
+   - js书写的三种位置
+     内部
+     外部
+     行内
+
+     - 注意事项
+       书写位置尽量写到文档末尾</body>前面
+       外部js标签不要写代码，否则会被忽略
+
+        
+
+
