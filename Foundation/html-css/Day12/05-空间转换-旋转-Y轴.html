@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 200px;
+        margin: 50px auto;
+    }
+
+    img {
+        width: 200px;
+        transition: all 2s;
+    }
+
+    .box{
+        perspective: 1000px;
+    }
+
+    .box img:hover{
+        transform: rotateY(60deg);
+    }
+    
+</style>
+<body>
+    <div class="box">
+        <img src="./images/hero.jpeg" alt="">
+    </div>
+</body>
+</html>
