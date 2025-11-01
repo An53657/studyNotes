@@ -14,7 +14,7 @@
      transform:translateY();
      transform:translateZ();
      ```
- 
+
    - 取值(正负均可)
      - 像素单位数值
      - 百分比(参照盒子自身尺寸计算结果)  
@@ -33,7 +33,7 @@
    - transform:rotateY(值);
    - 左手法制-根据旋转方向确定取值正负
      - 左手握住旋转轴，拇指指向正值方向，其他四个手指弯曲方向旋转正值方向、
-    
+   
     - 拓展 
       - rotate3d(x, y, z, 角度数)：用来设置自定义旋转轴的位置及旋转的角度
       - x y z 取值为0-1之间的数值
@@ -44,7 +44,7 @@
    - 属性值：
      - flat：子级处于平面中
      - preserve-3d:子级处于3d空间中
-      
+     
     - 呈现立体图形的步骤
         - 父元素添加transform-style:preserve-3d
         - 子级定位
@@ -56,8 +56,8 @@
    ![3d导航](../../imgs/html-css/Day12/01-立体导航-搭建立方体01.png)
 ---
    ![3d导航](../../imgs/html-css/Day12/02-立体导航-搭建立方体02.png)
-   
-  
+
+
   7. 空间缩放
      - 属性
        ```
@@ -87,13 +87,13 @@
        ```
        @keyframes 动画名称{
         0% {}
-
+    
         30% {}
-
+    
         ......
-
+    
         100% {}
-
+    
         ....
        }
        ```
@@ -114,12 +114,26 @@
       - 如果有两个时间值 第一个时间表示动画时长 第二个表示延迟时间
 
 11. 差分写法
-![差分动画](../../imgs/html-css/Day12/04-动画-差分动画.png)
 
-12. 案例-走马灯效果
+    | 属性 | 作用     |  取值  |
+    | ---- | ---- | ---- |
+    | animation-name | 动画名称 |      |
+    | animation-duration | 动画时长 |      |
+    | animation-delay | 延迟时间 |      |
+    | animation-fill-mode | 动画执行完毕的状态 | foeards :最后一帧状态 backwards:第一帧状态 |
+    | animation-timting-function | 速度曲线 | steps(数字)：逐帧动画 |
+    | animation-iteration-count | 重复次数 | infinite为无限循环 |
+    | animation-direction | 动画执行方向 | alternate为反向 |
+    | animation-play-state | 暂停动画 | paused为暂停 通常配合:hover使用 |
+
+    
+
+12. ![差分动画](../../imgs/html-css/Day12/04-动画-差分动画.png)
+
+13. 案例-走马灯效果
     - 无缝动画原理：复制开头动画到结尾位置(图片累加宽度=区域宽度)    
 
-13. 案例-逐帧动画
+14. 案例-逐帧动画
     - 核心原理
       1. steps()逐帧动画
       2. css精灵图
