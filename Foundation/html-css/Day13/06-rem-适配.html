@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        /* 使用媒体查询 给不同的视口的屏幕设置不同的HTML标签字号 */
+
+        @media (width:375.33px) {
+          body{
+                 background-color: pink;
+            }
+        }
+        
+        @media (width:320px){
+            html{
+                font-size: 10px;
+            }
+        }
+
+        @media (width:1024px){
+            html{
+                font-size: 102.4;
+            }
+            body{
+                background-color: blue;
+            }
+        }
+
+        /* 使用rem单位书写尺寸 */
+        .box {
+            width: 2rem;
+            height: 4rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <!-- <script src="./js/flexible.js"></script> -->
+</body>
+</html>
