@@ -1,0 +1,9 @@
+.father {
+  background-color: pink;
+}
+.father .son {
+  background-color: plum;
+}
+.father .son a {
+  color: beige;
+}

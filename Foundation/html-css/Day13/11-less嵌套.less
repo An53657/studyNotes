@@ -1,0 +1,18 @@
+.father {
+    background-color: pink;
+    .son{
+        background-color: plum;
+        a {
+            color: beige
+            
+            //& 表示的我当前选择器，后代写到谁的大括号里就表示谁 —— >
+            // 不会生成后代选择器
+            // 应用：配合hover伪类或者nth-child结构伪类使用 
+
+            // &:hover{
+            //     color: #000;
+            // }
+        }
+    }
+    
+}
