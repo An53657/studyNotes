@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //打印10次HelloWorld
+        for (let i = 1; i <= 10; i++) {
+            document.write(`第${i}次Hello,wrld! </br> `)
+        }
+        //1.利用for循环输出1-100岁
+        for (let i = 1; i <= 100; i++) {
+            document.write(`我今年${i}岁了 </br> `)
+        }
+
+        //2.求1-100之间的偶数和
+        let sum = 0
+        for (let i = 1; i <= 100; i++) {
+            if (i % 2 === 0) {
+                sum = sum + i
+            }
+        }
+
+        console.log(sum);
+
+        //3. 页面打印⭐
+        for (let i = 1; i <= 100; i++) {
+            document.write("⭐ </br>  " )
+        }
+
+        //遍历数组
+        let arr = ["张三" , "王五" , "李四" , "赵六" ]
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+            
+        }
+        
+    </script>
+</body>
+</html>
