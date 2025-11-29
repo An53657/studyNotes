@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //需求 求[2, 10, 120, 87, 59, 8,28]中最大值和最小值
+        let arr = [2, 10, 120, 87, 59, 8,28]
+
+        //1.声明一个保存最大元素的变量max 2.默认最大值可以取数组中第一个元素
+        let max = arr[0]
+        let min = arr[0]
+
+         //3.遍历这个数组，把里面某一个数组元素和max相比较
+        for (let i = 1; i < arr.length; i++) {
+            //4.如果这个数组元素小于max就把这个元素存到max里面，否则继续下一个比较
+          if (max < arr[i]) {
+            max = arr[i]
+          }
+
+            //4.如果这个数组元素大于min就把这个元素存到min里面，否则继续下一个比较
+           if (min > arr[i]) {
+            min < arr[i]
+           }
+        }
+         //5.最后输出这个max
+        console.log(`数组的最大值是${max}`)
+        console.log(`数组的最大值是${min}`)
+    </script>
+</body>
+</html>

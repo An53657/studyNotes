@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //需求 将数组[44,22,55,7,44,12,69,4,8,79,5,2,4]中大于等于6的元素选出来，放入新数组
+        let arr = [44,22,55,7,44,12,69,4,8,79,5,2,4]
+        //1.声明一个新的数组用于存放新的数据newArray
+         let newArray = []
+        //2.遍历原来的旧数组，找出大于等于6的元素
+         for (let i = 0; i < arr.length; i++) {
+             //依次追加给新数组newArray
+           if (arr[i] >= 6) (
+            newArray.push(arr[i])
+           )
+        
+         }
+        console.log(newArray)
+       
+    </script>
+</body>
+</html>

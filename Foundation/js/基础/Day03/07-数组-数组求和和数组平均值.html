@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //需求 求数组 [2, 14, 48, 55, 100]里面的所有元素的和和平均值
+
+        //1.声明一个求和遍历
+        //定义数组
+        let number = [2, 14, 48, 55, 100]
+        let sum = 0
+        //2.遍历这个数组，把每个数组元素累加到sum里面
+        for (let i = 0; i < number.length; i++) {
+            sum = sum + number[i]
+
+        }
+         console.log(`数组的和的结果是${sum}`)
+
+        //3.用求和变量sum除以数组的长度就可以得到数组的平均值
+        console.log(`数组的平均值的结果是${sum / number.length}`)
+    </script>
+</body>
+</html>
