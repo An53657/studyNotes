@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //需求 用户输入秒数可以自动转为时分秒
+
+        //1.用户输入总秒数(注意默认值)
+        let secoond = +prompt("请输入秒数：")
+        //2.计算时分秒(封装函数)里面包含数字补0
+        function get(t){
+            let = h = parseInt(t / 60 / 60 % 24)
+            let = m = parseInt(t / 60 % 60)
+            let = s = parseInt(t % 60)
+            // document.write(h ,m,s)\
+            h = h < 10 ? '0' + h : h
+            m = m < 10 ? '0' + m : m
+            s = s < 10 ? '0' + s : s
+
+            return `转换完毕:${h}小时${m}分钟${s}秒钟`
+           
+        }
+        let result = get(secoond)
+
+        //3.打印输出
+        document.write(result)
+    </script>
+</body>
+</html>
