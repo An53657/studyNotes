@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //自定义函数
+        function getRadomeColor (flag) {
+            if(flag){
+                //如果是true 返回#ffffff
+                str = "#"
+                let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+                //3.利用for循环抽取6次，累加到str里
+                for (let i = 0; i <= 6; i++) {
+                    //每次随机从数组里抽取一个
+                    //random是数组的索引号 是随机的
+                    let random = Math.floor(Math.random() * arr.length)
+                    str = str + arr[random] 
+                }
+                return str
+            } else {
+                //4.否则是false 返回rgb格式
+                let r = Math.floor(Math.random() * 256 )
+                let g = Math.floor(Math.random() * 256)
+                let b = Math.floor(Math.random() * 256)
+                return `rgb(${r},${g},${b})`
+            }
+        }
+        console.log(getRadomeColor(true))
+        console.log(getRadomeColor(false))
+    </script>
+</body>
+</html>
