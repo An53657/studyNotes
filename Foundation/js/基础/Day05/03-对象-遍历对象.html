@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj =  {
+            "user-name" : "kelly",
+            age : 19,
+            sex : '男',
+            sayHi: function () {
+                document.write('你好')
+            }
+        }
+
+        //遍历对象
+        for (let k in obj) {
+            //获取对象的属性
+            console.log(k)
+            //获取对象的属性值
+            console.log(obj[k])
+        }
+    </script>
+</body>
+</html>
