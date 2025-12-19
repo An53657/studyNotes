@@ -45,8 +45,76 @@
    
 
 ## 2.获取DOM对象
+   - 目标:能查找/获取DOM元素
+1. 根据CSS选择器来选择DOM(重点)
+   - 选择匹配第一个元素
+     - 语法
+       ```javascript
+        document.querySelector('css选择器')
+       ```
+
+     - 参数
+       - 包括一个或多个有效的css选择器 字符串
+
+     - 返回值
+       - CSS选择器匹配第一个元素，一个HTMLElement对象
+       - 如果没有匹配返回null
+
+   - 选择匹配多个元素
+     - 语法
+       ```javascript
+        document.querySelectorALL('css选择器')
+       ``` 
+
+     - 参数
+       - 包含一个或多个有效的CCSS选择器
+      
+     - 返回值
+       - CSS选择器匹配的NodeList对象集合
+     
+     - ```javascript
+      document.querySelectorAll(`CSS选择器`)
+      ```
+
+     - 到底的是一个伪数组
+       - 有长度有索引的数组
+       - 没有pop() push()等数组方法
+       - 得到数组元素要用for循环
+       - 哪怕只有一个元素，通过quseryScelectAll()获取过来的也是一个伪数组，里面只有一个元素而已
+
+     
+      
+   - 总结
+     - 获取一个DOM元素推荐使用，能直接操作修改吗
+       - querySelector()
+       - 可以
+
+     - 获取多个DOM元素推荐使用，能直接修改吗，如果不能怎么修改
+       - querySelectorAll()
+       - 不可以，只能通过遍历方式修改
+
+
+2. 其他获取DOM元素的方法(了解)
+   - ![获取DOM对象](../../../imgs/js/webAPI/Day01/04-WebAPI-获取DOM对象.png)
 
 ## 3.操作元素内容
+1. 对象.innerText属性
+   - 元素innerText属性
+     - 将文本内容添加/更换任意标签位置
+     - 显示纯文本，不解析标签
+
+2. 对象.innerHTML
+   - 将文本内容添加/跟新到任意标签里面
+   - 会解析标签，多标签建议使用模板字符
+
+3. 总结
+   - 设置/修改DOM元素内容有两种方式
+     - 元素.innerText属性
+     - 元素.innerHTML属性
+
+   - 三者的区别是什么
+     - 元素.innerText属性，只识别文本，不能解析标签
+     - 元素.innerHTML属性，能解析文本，能解析标签
 
 ## 4.操作元素属性
 
