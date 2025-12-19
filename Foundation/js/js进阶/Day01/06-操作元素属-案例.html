@@ -6,16 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <script> 
-        let arr = ['pink', 'red', 'blue']
-        let random = Math.floor(Math.random() * arr.length)
-        console.log(arr[random])
+    <img src="./images/1.webp" alt="">
+    <script>
         //随机函数
         function getRandom(M , N) {
             return Math.floor(Math.random() * (M - N + 1  )) + N
         }
-
-        console.log(getRandom( 8, 5))
+        //获取图片元素
+        const img = document.querySelector('img')
+        // //随机得到序号
+        const random = getRandom(1,6)
+        // //图片.src = 图片随机路径
+        img.src = `./images/${random}.webp`
     </script>
 </body>
-</html>
+</html> 
