@@ -177,8 +177,70 @@
          - classList是追加和删除不影响以前类名
 
 3. 操作表单元素属性
+   - 操作表单元素
+     - ![操作表单元素属性](../../../imgs/js/webAPI/Day01/05-操作元素属性-操作表单元素-表单元素属性.png)
+   - 语法
+     ```javascript
+      表单.value = '用户名'
+      表单.type = 'passworld'
+     ```
 
 4. 自定义属性
+   - 自定义属性
+     - ![自定义属性](../../../imgs/js/webAPI/Day01/06-操作元素属性-自定义属性.png)
+   - 标准属性：标签天生自带的属性，比如class id title等可以直接使用点语法操作比如disabled等
+   - 自定义属性
+     - 在h5中推出专门的data-自定义属性
+     - 在标签上以data开头
+     - 在DOM对象上以dataset对象方式获取
 
 ## 5.定时器-间歇函数
+   - 定时器函数介绍
+     - 目标：能说出定时器函数在开发中使用场景
+     - 网页会需要一种功能：每隔一段事件自中执行一段代码，不是要手动触发
+     - 例如：网页中的倒计时
+     - 需要实现这种需求，需要定时器函数
+
+   - 定时器函数基本使用
+     - 目标：能够使用定时器函数重复执行代码
+     - 定时器函数可以开启和关闭定时器
+       - 开启定时器
+         - 语法
+           ```javascript
+            setInterval(函数，间隔时间)
+           ```
+
+         - 作用：每隔一段时间调用这个函数
+         - 间隔时间单位是毫秒
+
+         - 例
+           ```javascript
+
+          setInterval(  function fn(){
+              console.log('Hi~~')
+            } ,1000)
+
+            //注意
+            //函数名字不需要加括号
+            //定时器返回的是一个id设字
+           ```
+       - 关闭定时器
+         - 列
+          ```javascript
+            let 变量名 = setInterval(函数，间隔时间)
+            clearInterval(变量名)
+
+            let time = setInterval(function () {
+              console.log('Hello,World')
+            },1000)
+            clearInterval(time)
+          ```
+   - 总结
+     - 定时器函数有什么作用
+       - 可以根据时间自动重复执行某段代码
+     - 定时器函数怎么开启
+       - setInverval(函数名，时间)
+     - 定时器函数怎么关闭
+       - let 变量 = setInverval(函数名，间隔时间)
+       - clearInverval（变量名
 

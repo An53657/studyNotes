@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="值">
+    <script>
+        const input = document.querySelector('input')
+        //获取表单数据
+        console.log(input.value)
+        //重新给值
+        input.value = "测试"
+        input.type = 'password'
+    </script>
+</body>
+</html>

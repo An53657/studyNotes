@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //开启定时器
+      let result =   setInterval(function() {
+             console.log('Hello,World')
+        } , 1000)
+        console.log(result)
+
+        //关闭定时器
+        clearInterval(result)
+
+
+    let i = 0
+     setInterval(function() {
+        i++
+        document.write(`${i} </br>`)
+     } ,200)
+    </script>
+</body>
+</html>
