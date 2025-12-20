@@ -126,6 +126,55 @@
      ```
 
 2. 操作元素样式属性
+   - 通过style属性操作CSS
+     - 注意
+       - 修改样式通过stayle属性引出
+       - 如果属性有-连接符，需要转换为小驼峰命名法
+       - 赋值的时候，需要的时候不要忘记加CSS单位
+       
+     - 语法
+       ```javascript
+        对象.style.样式属性 = 值
+       ```
+
+
+   - 操作类名(className)操作CSS
+     - 如果修改样式比较多，可以通过借助CSS类名的形式
+     - 注意
+       - 由于class类是关键字，所以使用className
+       - className是使用新值换旧值，如果需要添加一个类，需要保留之前的类名
+
+     - 语法
+       ```javascript
+        //active是一个class类名
+        元素.class = 'active'
+       ```
+
+     - 总结
+       - 使用className有什么好处
+         - 可以同时修改多个样式
+       - 使用className有什么注意事项
+         - 直接使用className赋值会覆盖以前的类名
+
+   - 通过classList操作控制CSS
+     - 为了解决className容易覆盖以前的类名，可以通过classList方式追加和删除
+    
+     - 语法
+       ```javascript
+        //追加一个类
+        元素.classList.add('类名')
+
+        //删除一个元素
+        元素.classList.remove('类名')
+
+        //切换一个元素
+        元素.classList.toggle('类名 ')
+       ```
+     - 总结
+       - classNamme和classList区别
+         - classList修改大量样式方便
+         - className修改少量样式方便
+         - classList是追加和删除不影响以前类名
 
 3. 操作表单元素属性
 
