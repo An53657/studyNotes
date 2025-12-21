@@ -10,6 +10,7 @@
 
 ---
 ## JavaScript
+![JavaScript](https://github.com/An53657/Front-end-notes/blob/main/imgs/js/pic/javaScript.png)
 
 ---
 
