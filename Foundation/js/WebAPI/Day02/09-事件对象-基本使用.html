@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <input type="text" placeholder="请输入文本" name="" id="">
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener('click' , function(e) {
+            console.log(e)
+        })
+
+        const input = document.querySelector('input')
+        input.addEventListener('keyup' , function(e) {
+            // console.log(1)
+            if (e.key === "Enter") {
+                console.log('按下了回车键')
+            }
+        }) 
+
+    </script>
+</body>
+</html>
