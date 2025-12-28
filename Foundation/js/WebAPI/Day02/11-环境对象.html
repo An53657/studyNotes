@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        //重要 每个函数里都有this 环境对象
+        //在普通函数中，this指向的是windows(浏览器窗口)
+        function fn () {
+            console.log(this)
+        }   
+        // fn()
+        
+        // 在普通函数中，完整调用函数写法，一般会省略
+        window.fn()
+
+        const btn = document.querySelector('button')
+        // 在事件监听中，谁调用函数，this就指向谁
+        btn.addEventListener('click' , function(){
+            // console.log(this)
+            // 通过this修改属性
+            this.style.color = 'red'
+        })
+    </script>
+</body>
+</html>
