@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //等待页面的所有资源加载完毕，然后执行回调函数
+        window.addEventListener('Load' , function () {
+             const btn = document.querySelector('button')
+             btn.addEventListener('click' , function () {
+                alert(11)
+             })
+        })
+
+        //无需等待样式表，图像完全加载完成
+        document.addEventListener('DOMContentLoaded' , function () {
+            const btn = document.querySelector('button')
+            btn.addEventListener('click' , function () {
+                alert(1)
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>按钮</button>
+</body>
+</html>

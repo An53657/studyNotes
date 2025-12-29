@@ -44,6 +44,12 @@
     事件对象.stopPropagtion()
   ```
 
+- 阻止默认行为
+  - 语法
+    ```
+      e.prevenDefault()
+    ```
+
 ### 5. 解绑事件
 - 传统解绑事件
 - ![传统解绑事件](../../../imgs/js/webAPI/Day03/05-事件流-传统解绑事件.png)
@@ -86,7 +92,93 @@
     - 匿名函数无法被解绑
 
 ## 2.事件委托
+- 目标：能够说出事件委托的好处
+- ![](../../../imgs/js/webAPI/Day03/08-事件委托.png)
+- 事件委托是利用事件流的知识
+  - 优点：减少注册此数，提高程序性能
+  - 原理：事件委托其实是利用事件冒泡的特点
+    - 给父元素注册事件，当我们触发了子元素的时候，会冒泡到父元素身上，从而触发父元素事件
+  - 实现：事件对象.targrt.tagNmame可以阵正触发事件元素 
+
+- 总结
+  - 事件委托好出是说明
+    - 减少注册事件，提高程序性能
+  - 事件委托是委托给了谁，父元素还是子元素
+    - 父元素
+  - 如何找到真正触发的元素
+    - 事件对象。target.tarName
 
 ## 3.其他事件
+### 1.页面加载事件
+- 加载外部资源(如图片，外联CSS，外联JS等)加载完毕时，触发事件
+- 事件名:load
+- 监听页面资源所有加载完毕：
+  - 给window添加load事件
+- 注意
+  - 不仅可以监听整个页面资源加载完毕，也可以针对页面资源绑定load事件  
+- 语法
+  ```javascript
+    windows.addEntListenter('load' , function() {
+      //执行操作
+    })
+  ```
+- 当页面的HTML文档被完全加载和解析完之后，DOMContetLoad事件被触发，而
+  不用等待样式表，图形等完全加载完成
+- 事件名：DOMContentLoaded
+- 监听页面DOM加载完毕
+  - 给document添加DOMContentLoaded事件
+- 语法
+  ```javascript
+    document.addEventListenter('DOMContentLoaded' , function() {
+      //执行的操作
+    })
+  ```
+- 总结
+  - 页面加载事件有那两个
+    - load事件
+      - 监听整个页面资源给window
+    - DOMContentLoaded
+      - 给document
+      - 无需等待样式表，图像等完全加载完
 
+### 2.元素滚动事件
+- 滚动条在滚动时时候持续触发事件
+- 事件名：scroll
+- 给window或document添加scroll事件
+- 监听某个元素的内容滚动直接给某个元素即可
+- 监听整个页面滚动
+  ```javascript
+    //页面滚动事件
+    window.addEventListenter('scroll' , function() {
+      //执行的操作
+    })
+  ```
+
+- 页面滚动事件-获取位置
+  - scrollLeft和scrollTop(属性)
+    - 获取被卷去的大小
+    - 获取元素内往左，往上滚动出去看不到的距离
+    - 这两个值是可读写的
+
+- 使用场景
+  - 想要页面滚动一段距离，比如100px，就让某些元素显示
+
+- 开发中经常检测页面滚动距离，，比如页面滚动100px，就可以显示有个元素或者固定有个元素
+- 注意：document.documentElement HTML文档返回对象为HTML元素
+  ```javascript
+    window.addEventListenter('scroll' , function() {
+      //document.cocumentElement.scrollTops1是元素获取方式
+      const n = document.documentElement.scrollTop
+      console.log(n)
+    })
+  ```
+
+- 总结
+  - 被卷去的头部或者左侧用哪个属性，是否可以读取和修改
+    - scrollTop/scrollleft
+    - 可以读取，也可以修改(赋值)
+  - 检测页面滚动的头部距离(被卷去的头部)用哪个属性
+    - document.documentElement.scrollTop
+
+### 3.页面尺寸事件
 ## 4.元素尺寸与其他位置
