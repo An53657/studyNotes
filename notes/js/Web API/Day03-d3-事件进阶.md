@@ -181,4 +181,38 @@
     - document.documentElement.scrollTop
 
 ### 3.页面尺寸事件
+- 会在窗口尺寸改变的时候触发事件
+- resize
+  ```javascript
+    window.addEventListenter('resize' , function() {
+      //执行的代码
+    })
+  ```
+- 检测屏幕宽度
+  - 语法
+   ```javascript
+    window.addEventListenter('resize' , function() {
+        let w = document.documentElenment.clientwidth
+    })
+  ```
+
+- 获取宽高
+  - 获取元素的可见部分宽高(不包含边框,margin, 滚动条等)
+  - clientwidth和clientheight
 ## 4.元素尺寸与其他位置
+- 元素尺寸位置
+  - 获取宽高
+    - 获取元素的自身宽高,包含元素自生设置的宽高,dadding,border
+    - offsetWidth和offsetHeight
+    - 获取的是数值,方便计算
+    - 注意:获取的是考试宽度,盒子是隐藏的,获取的结过是0
+  - 获取位置
+    - 获取元素距离自己定位父级元素,左上距离
+    - offsetLeft和offsetTop 注意是只读的
+
+- 总结
+  - offsetwidth和offsetHeight是得到元素的什么宽高
+    - 内容 + padding + border
+  - offsetLeft和offsetTop得到位置以谁为主
+    - 带有定位的父级
+    - 如果都没有则以文档左上角为主

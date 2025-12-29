@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 100px auto;
+            overflow: scroll;
+            width: 150px;
+            height: 150px;
+            border: 1px solid pink;
+            
+        }
+
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+        我是有个div
+    </div>
+    <script>
+        document.addEventListener('scroll' , function () {
+            // console.log('页面滚动')
+
+            //获取页码滚动了多少像素
+            //写法
+            console.log(document.documentElement.scrollTop)
+        })
+
+        const div = document.querySelector('div')
+        div.addEventListener('scroll' , function () {
+            // console.log('div滚动')
+           console.log( div.scrollTop)
+        })
+    </script>
+</body>
+</html>
