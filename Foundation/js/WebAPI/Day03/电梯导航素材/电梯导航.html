@@ -1215,7 +1215,9 @@
     </ul>
   </div>
     <script>
-      // 获取xtx-elevator
+      //第一大模块
+     (function() {
+       // 获取xtx-elevator
       const  elevator = document.querySelector('.xtx-elevator')
       const entry = document.querySelector('.xtx_entry')
       //给window注册滚动事件
@@ -1234,7 +1236,73 @@
         backTop.addEventListener('click' , function () {
           document.documentElement.scrollTop  = 0
         })
-    </script>
+     })();
+   
+   //第二第三放到这里
+   (function () {
+      const list = document.querySelector('.xtx-elevator-list')
+      list.addEventListener('click' , function(e) {
+        // console.log(11)
+        if (e.target.tagName === 'A' && e.target.dataset.name) {
+          // 排它思想 
+          // 先移除
+          //先取这个类名
+          const old =  document.querySelector('.xtx-elevator-list .active')
+          // console.log(old)
+          if (old) {
+            old.classList.remove('active')
+          }
+
+          // 在添加
+          e.target.classList.add('active')
+          // 获取自定义属性
+          // console.log(e.target.dataset.name)
+          // 根据小盒子去选择大盒子 
+          // console.log(document.querySelector(`.xtx_goods_${e.target.dataset.name}`))
+          // 获得对应大盒子的offsetleft
+          // console.log( document.querySelector(`.xtx_goods_${e.target.dataset.name}`).offsetTop)
+          const top = document.querySelector(`.xtx_goods_${e.target.dataset.name}`).offsetTop
+          // 让页面滚动相应的位置上
+          document.documentElement.scrollTop = top
+      
+
+        }
+      })
+  
+      // 页面滚动
+      window.addEventListener('scroll' , function(e) {
+          // 排它思想 
+          // 先移除
+          //先取这个类名
+          const old =  document.querySelector('.xtx-elevator-list .active')
+          // console.log(old)
+          if (old) {
+            old.classList.remove('active')
+          }
+
+          // 获取4个大
+          const news = document('."xtx_goods_new')
+          const popular = document.querySelector('."xtx_goods_popular')
+          const brand = document.querySelector('."xtx_goods_brand')
+          const topic = document.querySelector('."xtx_goods_topic')
+          const n = document.documentElement.scrollTop 
+          //
+          if (n >= news.offsetTop && n < popular.offsetTop) {
+            document.querySelector('[data-name="new]').classList.add('active')
+          }else if (n >= popular.offsetTop && n < brand.offsetTop){
+            document.querySelector('[data-name="popular]').classList.add('active')
+          }else if (n >= brand.offsetTop && n < topic.offsetTop) {
+            document.querySelector('[data-name="brand]').classList.add('active')
+          }else if (n >=topic.offsetTop) {
+            document.querySelector('[data-name="topic]').classList.add('active')
+          }
+      })
+  
+  
+    })();
+   
+   
+   </script>
 </body>
 
 </html>

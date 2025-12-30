@@ -194,7 +194,7 @@
     window.addEventListenter('resize' , function() {
         let w = document.documentElenment.clientwidth
     })
-  ```
+   ```
 
 - 获取宽高
   - 获取元素的可见部分宽高(不包含边框,margin, 滚动条等)
@@ -210,9 +210,24 @@
     - 获取元素距离自己定位父级元素,左上距离
     - offsetLeft和offsetTop 注意是只读的
 
+- 获取位置
+  - element.getBoundingClientRect()
+  - 方法返回元素大小及其相当于视口的位置
+
 - 总结
   - offsetwidth和offsetHeight是得到元素的什么宽高
     - 内容 + padding + border
+    
   - offsetLeft和offsetTop得到位置以谁为主
     - 带有定位的父级
+    
     - 如果都没有则以文档左上角为主
+    
+      | 属性                      | 作用                                     | 说明                                                   |
+      | ------------------------- | ---------------------------------------- | ------------------------------------------------------ |
+      | scrollLeft和scrollTop     | 被卷去的头部和左侧                       | 配合也滚动来用，可读写                                 |
+      | clientWidth和clientHeight | 获得元素的宽度和高度                     | 不包含border，margin，用于js获取元素的的大小，只读属性 |
+      | offsetWidth和offfsetHight | 获得元素的宽度和高度                     | 包含border，padding，滚动条，只读                      |
+      | offsetLeft和offsetTop     | 获取元素距离自己定位父级元素的左，上距离 | 获取元素位置时候，只读属性                             |
+      
+      
