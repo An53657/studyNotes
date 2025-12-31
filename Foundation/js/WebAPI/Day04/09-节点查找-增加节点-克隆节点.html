@@ -14,7 +14,27 @@
         <li>5</li>
     </ul>
     <script>
- 
+        // // 选择节点
+        // const li = document.querySelector('li')
+        // const ul = document.querySelector('ul')
+        // //克隆节点
+        // l = li.cloneNode(true)
+        // // 追加元素
+        // ul.appendChild(l)
+
+        // // 把ul整个获取
+        // const ul = document.querySelector('ul')
+        // //克隆节点
+        // li1 = ul.children[0].cloneNode(true)
+        // // 追加
+        // ul.appendChild(li1)
+
+        // 把ul获取
+        const ul = document.querySelector('ul')
+        // 克隆 元素cloneNode
+        ul.appendChild(ul.children[0].cloneNode(true))
+
+
     </script>
 </body>
 </html>
