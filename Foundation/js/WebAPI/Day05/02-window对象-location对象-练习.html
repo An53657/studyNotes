@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.baidu.com/">支付成功5秒自动跳转</a>
+    <script>
+        //需求 用户点击可以跳转， 如果不点击则自动跳转
+        // 获取元素
+        const a  = document.querySelector('a')
+        //声明一个用于倒计时的变量
+        let n = 5
+        setInterval(function() {
+            n-- 
+            // 写数据
+            a.innerHTML = `<a href="https://www.baidu.com/">支付成功${n}秒自动跳转</a>`
+            // 如果时间到了 跳转
+            if(n === 0) {
+                location.href = `https://www.baidu.com/`
+            }
+        } , 1000)
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组.map()
+        const arr = ['red' , 'blue' , 'red']
+        let newArr = arr.map(function(ele , index) {
+            //ele是数组中的元素 index是索引号
+            // console.log(ele)
+            // console.log(index)
+            return ele + '颜色'
+        })
+
+        console.log(newArr)
+
+        //数组join转换字符串
+        // 小括号空则为逗号分隔
+        console.log(arr.join())
+
+        //小括号是空字符串，则元素之间没有分隔符
+        console,log(arr.join())
+    </script>
+</body>
+</html>

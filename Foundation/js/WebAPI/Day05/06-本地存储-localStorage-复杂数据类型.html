@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //存储复杂数据类型
+        const obj = {
+            userName: 'XXX',
+            age: "18",
+            sex: '男',
+        }
+
+        // 1.存储复杂数据类型，必须转换为1JSO你字符串存储
+        localStorage.setItem('obj' , JSON.stringify(obj))
+        //取 把JSON字符串转化为字符串 用JSON.parse
+        const str = localStorage.getItem('obj')
+        // console.log(str)
+        // 转换为对象
+        console.log(JSON.parse(str))
+    </script>
+</body>
+</html>
