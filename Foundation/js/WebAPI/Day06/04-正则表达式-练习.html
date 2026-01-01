@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id=""></textarea>
+    <button></button>
+    <div></div>
+    <script>
+        const textarea = document.querySelector('textarea')
+        const button = document.querySelector('button')
+        const div =document.querySelector('div')
+        button.addEventListener('click' , function () {
+            // console.log(1)
+            div.innerHTML = textarea.value.replace(/W/)
+        })
+    </script>
+</body>
+</html>
