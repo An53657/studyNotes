@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //arguments是动态函数
+        function getSum() {
+            // console.log(arguments)
+            //定义一个计数器
+            let number = 0
+            for(let i = 0; i < arguments.length; i++){
+                number = number + arguments[i]
+            }
+            console.log(number);
+            
+        }
+        getSum(1,2,3,4)
+    </script>
+</body>
+</html>
