@@ -412,5 +412,47 @@
    2. 对象属性的值将被赋值给与属性名相同的变量
    3. 注意解构的变量名不要和外面的变量名冲突否则报错
    4. 对象中找不到与变量名一致的属性时变量值为undefined   
+- 可以从一个对象中提取变量并同时修改新的变量名
+- 冒号表示 '什么值'：'赋值给谁'
+  ```javascript
+      //把原来的name变量重新命令为uname
+      const {name:uname , age} = {name"pink" , age:18}
+  ```
+  - 数组对象解构e
+  ```javascript
+  const pig [
+    {
+      uname:'pink'
+      age:18
+    }
+  ]
 
+  const [{uname,age}]= pig
+  ```
+
+- 多级对象解构
+  ```javascript
+    const person = [
+      {
+        name: '佩奇',
+        family: {
+          mother: '猪妈妈',
+          father: '猪爸爸',
+          sister: '乔治'
+        },
+        age: 6
+      }
+    ]
+  const [{name ,family: {mother,father,sister} }]= pig
+  ```
+
+- forEach()方法用于数组的每一个对象，并将元素传递给回调函数
+- 主要使用场景：遍历数组的每一个元素
+- 主要
+  - forEach主要是用于遍历数组
+  - 参数当前数组是必须写的，索引号可写
+  ```javascript
+    被遍历的对象.forEch(function(当前数组元素，当前元素的索引号){函数体})
+    arr.forEach(function(item,index) {console.log(item)})
+  ```
 ---
