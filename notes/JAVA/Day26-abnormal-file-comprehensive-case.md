@@ -1,0 +1,175 @@
+# D26 异常-file-综合案例 abnormal-file-comprehensive-case
+
+
+---
+
+## 1.异常
+1. 什么是异常
+   异常就是代表程序出现的问题
+
+2. 异常的分类
+![屏幕截图 2025-08-02 090442](C:\Users\kelly\Pictures\Screenshots\屏幕截图 2025-08-02 090442.png)
+---
+3. Error
+   Error:代表系级别错误(属于严重问题)系统一旦出现问题，sun公司把这些错误封装成Error对象。Error是sun公司自己用的，不是给我们程序员看的。因此我们开发人员不用管它。
+
+4. Exceptio:叫做异常，代表程序可能程序的问题。
+   我们通常会用Exception以及他的子类来封装程序出现的问题。
+
+5. RuntimeException:运行时异常，RuntimeException及其子类，编译阶段不会出现异 常提醒。
+运行时出现的异常 (如:数组索引越界异常)
+
+6.  编译时异常:除了RuntimeException以外所有的异常叫,编译阶段就会出现异常提醒。(如:日期解析异常)
+
+总结：
+
+7. 异常是什么？
+   - 程序中可能出现的问题
+
+8. 异常体系最上层父类是谁？异常分为几类？
+   - 父类: Exception
+   - 异常: 分为两类运行时异常和编译时异常
+
+9. 编译时异常和运行时异常的区别？
+   - 编译时异常：没有继承RuntimeException的异常，直接继承Exception.
+     编译阶段就会错误提示
+
+    - 运行时异常：RuntimeException本身和子类。
+                 编译阶段没有错误提示，运行时出现的
+
+10. 运行时异常和编译时异常的区别？
+    - 编译时异常：除了RuntimeExeption和它的子类，其他的都是编译时异常。
+      编译阶段需要进行处理，作用在于提醒程序员
+    
+    - RuntimeExeption本身和所有的子类，都是运行时异常。
+    编译阶段不会报错，是程序运行时程序的。
+    一般由于参数传递错误带来的问题
+
+11. 异常的作用
+    - 作用一：异常用于查询bug的关键参考信息
+
+    - 作用二：异常可以可以作为方法内部的一种特殊的返回值，以便通知调用者底层的执行情况
+
+12. 异常处理方式
+    - JVM:默认处理方式
+      1. 把异常的名称，异常原因及异常出现的位置等信息输出在控制台
+      2. 程序停止执行，下面代码不会在执行了
+
+    - 自己处理(捕获异常)
+
+               格式
+               try{
+                  可能出现异常的代码;
+               } catch (异常名 变量名) {
+                  异常处理的代码;
+               }
+
+               目的：当代码出现异常时，可以让代码继续往下执行
+
+            Throwable成员方法
+            方法名                        说明
+            public Sting getMessages()    返回此throwable的详细消息的字符串
+            public String toString()      返回此可抛出的简短描述
+            public void prinstStaackTrace()  把异常的错误信息输出在控制台中 
+
+    - 抛出异常
+      - throws
+        注意：写在方法的定义处，表明声明一个异常
+              告诉调用者，使用本方法可能会有哪些异常
+              public void 方法() throws 异常类1，异常类2...{
+               ...
+              } 
+
+              编译时异常：必须要写
+              运行时异常：可以不写
+
+         - throw
+         注意：写在方法内，结束方法
+               手动抛出异常对象，交给调用者
+               方法中下面不在执行了
+               public void 方法(){
+                  throw new 异常名();
+               }
+
+13. 总结
+   1. 虚拟机默认处理异方式
+      把异常信息以红色字体打印在控制台，并结束程序
+   2. 捕获：try...catch
+      一般用在调用处，能让代码继续往下运行
+   3. 抛出： throw throws
+      在方法中，出现了异常了
+      方法就没有继续运行下去的意义了，采取抛去处理
+      让该方法结束运行并告诉调用者出现了问题
+14. 自定义异常
+    1. 定义异常类
+    2. 写继承关系
+    3. 空参构造
+    4. 带参构造
+
+15. 意义：就是为了让控制台的报错信息更加见面之意
+
+---
+
+
+## 2.File
+16. 路径
+    - 相对路径
+      不带盘符的，相对项目而言
+    - 绝对路径
+      盘符的
+
+17. File
+    - File对象就表示一个路径，可以是文件的路径，也可以是文件夹的路径
+    - 这个路径可以是存在的，也允许是不存在的
+
+18. 构造方法
+
+               方法名称                               说明
+               public File(String pathname)           根据文件路径创建文件对象
+               public File(string parent, String child) 根据父路径名字字符串和子路径字符串创建文件对象
+               public File(File parent, String child)   根据父路径对应文件对象和子路径名字字符串创建文件对象
+
+19. File的常见成员方法(判断，获取)
+
+               方法名称                                 说明
+               public boolean isDirectory()             判断此路径名表示的File是否为文件夹
+               public boolean isFile()                  判断此路径名表示File是否为文件夹
+               public boolean exists()                   判断此路径名表示的File是否存在
+               public long length()                      返回文件的大小(字节数量)
+               public String getAbssolutePath()          返回文件的绝对路径
+               public String getPath()                   返回定义文件时使用的路径
+               public String getName()                   返回文件的名称，带后缀
+               public long lastMoodified()               返回文件的最后的修改时间(毫秒值)
+
+20. File的常见成员方法(创建，删除)
+
+               方法名称                                              说明
+               public boolean createNewFile()                        创建一个新的空的文件
+               public boolean mkdir()                                创建单级文件夹
+               public boolesn mkdirs()                               创建多级文件夹
+               public boolean delete()                               删除文件，空文件夹
+
+21. File常见成员方法(获取并遍历)
+
+             方法名称                                               说明
+             public static File[] listRoots()                       列出可用的文件系统根
+             public String[] list()                          获取当前该路径下的所有内容
+             pulic String[] list(FilenameFilter  filter)            利用文件名过滤器获取当前该路径下所有内容
+             public File[] listFiles()                               获取当前该路径下所有内容
+             public File[] listFiles()
+             public File[] listFiles(FilenameFilter  filter)         利用文件名过滤器获取当前该路径下所有内容
+
+
+
+----
+
+
+
+## 3.综合练习
+22. 递归思想
+    把大文件拆分，拆到某一个文件夹中不包括其他文件夹为之
+    套路
+       - 进入文件夹
+       - 遍历文件夹
+       - 判断
+       - 判断
