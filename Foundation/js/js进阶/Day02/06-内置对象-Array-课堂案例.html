@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        const spec = { size: '40cm*40cm', color: '黑色' }
+        // 使用数组.values获取元素
+        // console.log(Object.values(spec))
+        //使用数组.join拼接
+        // console.log(Object.values(spec).join('/'))
+        document.querySelector('div').innerHTML = Object.values(spec).join('/')
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const arr = [{
+             name: '张三',
+             salary: 10000
+          }, {
+            name: '李四',
+            salary: 10000
+          }, {
+            name: '王五',
+            salary: 20000
+          },
+          ]
+          const s = arr.reduce((pre,cur) => pre + cur.salary * 1.6,0)
+          console.log(s)
+    </script>
+</body>
+</html>
