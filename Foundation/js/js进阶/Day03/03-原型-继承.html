@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //抽取到pr
+        function pr (){
+            this.eays = 2
+            this.heart = 1 
+        }
+        // 通过原型继承
+        wo.prototype = new pr()
+        wo.prototype.sa = function() {
+            console.log(1)
+        }
+        // 指回原来的构造函数
+        wo.prototype.comstructor = wo
+        function wo(){
+            
+        }
+
+        function m (){
+             
+        }
+
+        const w = new wo()
+        const me = new m()
+        
+        console.log(w)
+        console.log(me)
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Stundent (name,age,sex){
+            this.name = name
+            this.age =  age
+            this.sex =  sex 
+        }
+        const stu1 = new Stundent('wangwu',18,'男')
+      
+        Stundent.prototype.eat = function(){
+            console.log('在吃饭')
+        }
+          console.log(stu1)
+    </script>
+</body>
+</html>
