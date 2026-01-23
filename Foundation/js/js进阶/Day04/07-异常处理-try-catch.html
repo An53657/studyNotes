@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>123</p>
+    <script>
+        function fn() {
+          try {
+            //可能出现的错误，写到try里
+             const p =  document.querySelector('1p')
+             p.style.color = 'red'
+          } catch (error) {
+            //拦截错误，提示浏览器提供的错误的信息，但是不中断程序的执行
+           //console.log(error.message)
+           throw new Error(`请检查`)
+           //需要加return中断程序
+           //return
+
+          }finally{
+            // 不管程序报错finally的代码一定会执行
+            console.log(1111111)
+       
+        }
+        }
+
+        fn()
+    </script>
+</body>
+</html>
