@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            name: 'pink',
+            age: 18,
+            hobby: ['乒乓球' , '足球'],
+            family: {
+                name: '老pink'
+            }
+
+        }
+
+        const o = {}
+        
+        //深拷贝简易版
+        function deepCopy(newobj,oldobj){
+            //利用for in
+            for (const k in oldobj) {
+                //处理数组问题
+                if(oldobj[k] instanceof Array) {
+                    //创建新数组
+                    newobj[k] = []
+                    deepCopy(newobj[k] , oldobj[k])
+                }else if(oldobj[k] instanceof Array) {
+                    //创建新数组
+                    newobj[k] = []
+                    deepCopy(newobj[k] , oldobj[k])
+                }else {
+                    
+                //k是属性名 name age
+                // oldobj[k]是属性值 18
+                //newObj[k] === o.name 给新对象添加属性
+                //console.log(k)
+                //console.log(obj)
+                newobj[k] = oldobj[k]
+                }
+            }
+        }
+        //函数调用 两个对象o新对象 obj旧对象
+        deepCopy(o, obj)
+        console.log(o)
+        o.hobby[0] = '篮球'
+        console.log(obj)
+   </script>
+</body>
+</html>
