@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [140 , 56, 66, 7 , 79 , 78]
+        const obj = {
+            name: 'pink'
+        }
+        function fn(x , y ) {
+            console.log(this)
+            console.log(x + y )
+        }   
+        // call()和apply()的区别是传递的参数不一样
+        //apply(改变this，[数组])
+        fn.apply(obj ,[1,2])
+
+        // console.log(Math.max(123,5,88))
+        // 数组的最大值
+        // console.log(Math.max.apply(null , arr ))
+        console.log(Math.max(...arr ))
+        
+    </script>
+</body>
+</html>

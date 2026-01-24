@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="./lodash.min.js"></script>
+    <script>
+        let i = 1
+        const div = document.querySelector('div')
+        //利用库实现节流
+        function mouseE() {
+            div.innerHTML = i++
+        }
+        // div.addEventListener('mouseover' , _.throttle(mouseE , 500))
+
+        //封装节流函数
+            //核心思路 利用定时器实现
+            //1.声明一个定时器变量
+            //2.当鼠标每次滑动先判断有没有定时器了，如果有则不开启新的定时器
+            //3.如果没有定时器则开启新的定时器，存到变量里
+                //1.定时器里里面调用执行的函数
+                //2.定时器里面要把定时器清空  
+        function throttle(fn,t){
+            let timer = null
+            return function(){
+                if(!timer) {
+                setTimeout(function() {
+                fn()
+                //清空定时器
+                timer = null
+                    } , t )
+                }
+            }
+        }
+        div.addEventListener('mousemove' , throttle(mouseE , 5000))
+    </script>
+</body>
+</html>

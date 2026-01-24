@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="./lodash.min.js"></script>
+    <script>
+        let i = 0 
+        const div = document.querySelector('div')
+        function mouseE(){
+            div.innerHTML = i++
+        }
+        // document.querySelector('div').addEventListener('mousemove' , function() {
+        //     this.innerHTML =  i++ 
+        //     // console.log(this)
+        // })
+
+        // 利用lodash库实现防抖
+        //  div.addEventListener('mousemove', _.debounce(mouseE , 500) )
+
+        // 封装一个防抖函数
+            //核心利用setTimeout定时器拉实现
+            // 1. 声明一个定时器变量
+            // 2 每次鼠标移动(事件触发)的时候都要先判断是否有定时器，如果有先清除定时器
+            // 3. 如果没有定时器，先开启一个定时器，存入到定时器变量里面
+            // 4. 定时器里面写函数调用
+        function debounce(fn , t){
+            //1.声明变量
+            let timer
+            return function() {
+                if(timer) clearTimeout(timer)
+                timer = setTimeout(function(){
+                    fn()
+            }  , t)
+            }
+        }
+        div.addEventListener('mousemove' , debounce(mouseE , 500))
+
+    </script>
+</body>
+</html>
