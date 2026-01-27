@@ -77,11 +77,11 @@
 
 - [x] 1️⃣3️⃣HTML/CSS
 
-- [x ] 1️⃣4️⃣JavaScript
+- [x] 1️⃣4️⃣JavaScript
 
 - [ ] 1️⃣5️⃣ajax
 
-- [ ] 1️⃣6️⃣VUE
+- [ ] 1️⃣x]6️⃣VUE
 
 - [ ] 1️⃣7️⃣unity
 
