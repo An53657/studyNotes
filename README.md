@@ -77,7 +77,7 @@
 
 - [x] 1️⃣3️⃣HTML/CSS
 
-- [ ] 1️⃣4️⃣JavaScript
+- [x ] 1️⃣4️⃣JavaScript
 
 - [ ] 1️⃣5️⃣ajax
 
